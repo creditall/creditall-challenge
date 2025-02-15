@@ -17,6 +17,6 @@
   * Enfim, tudo será observado e levado em conta
 ## Como iniciar o desenvolvimento
   * Fork esse repositório na sua conta do GitHub.
-  * Crie uma branch com o nome desafio
+  * Crie uma branch com o nome do desafio
     
 Qualquer dúvida sobre o teste, fique a vontade para entrar em contato conosco.
