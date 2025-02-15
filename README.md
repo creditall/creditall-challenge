@@ -1,22 +1,27 @@
-# creditall-challenge
+# Creditall Challenge
 
 ## Requisitos
-  * O sistema deverá ser desenvolvido utilizando a linguagem de sua preferência.
-  * Você deve criar um CRUD que permita cadastrar as seguintes informações:
-  * Produto: Nome, Descrição e Preço.
-  * Venda: Produto,Data da venda, Quantidade do produto, Desconto, Status da venda.
-  * Cliente: Nome, Email, CPF.
-  * Salvar as informações necessárias em um banco de dados (relacional) de preferência MySql.
+* O sistema deve ser desenvolvido utilizando a linguagem de sua preferência.
+* Criar um CRUD para as seguintes entidades:
+  * **Produto**: Nome, Descrição e Preço.
+  * **Venda**: Produto, Data da venda, Quantidade do produto, Desconto, Status da venda.
+  * **Cliente**: Nome, Email, CPF.
+* Utilizar um banco de dados relacional (preferencialmente MySQL) para armazenar as informações.
 
 ## Opcionais
-  * Testes automatizados com informação da cobertura de testes
-  * Upload de imagem no cadastro de produtos
-## O que será avaliado
-  * Estrutura e organização do código e dos arquivos
-  * Qualidade
-  * Enfim, tudo será observado e levado em conta
-## Como iniciar o desenvolvimento
-  * Fork esse repositório na sua conta do GitHub.
-  * Crie uma branch com o nome do desafio
-    
-Qualquer dúvida sobre o teste, fique a vontade para entrar em contato conosco.
+* Implementação de testes automatizados com cobertura de testes.
+* Upload de imagem no cadastro de produtos.
+
+## Critérios de Avaliação
+* Estrutura e organização do código e dos arquivos.
+* Qualidade do código e boas práticas.
+* Cobertura dos requisitos e opcionais.
+
+## Instruções para Desenvolvimento
+1. Realizar um **fork** deste repositório em sua conta do GitHub.
+2. Criar uma **branch** com o nome do desafio.
+3. Desenvolver a solução conforme os requisitos.
+4. Enviar o código para o repositório forkado e compartilhar o link.
+
+Qualquer dúvida, fique à vontade para entrar em contato conosco.
+
