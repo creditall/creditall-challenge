@@ -11,6 +11,7 @@
 ## Opcionais
 * Implementação de testes automatizados com cobertura de testes.
 * Upload de imagem no cadastro de produtos.
+* Desenvolvimento do front-end para o cadastro de produtos, caso o candidato deseje complementar a solução.
 
 ## Critérios de Avaliação
 * Estrutura e organização do código e dos arquivos.
@@ -24,4 +25,3 @@
 4. Enviar o código para o repositório forkado e compartilhar o link.
 
 Qualquer dúvida, fique à vontade para entrar em contato conosco.
-
