@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <span>Creditall Challenge</span>
+      <div class="actions">
+        <button onclick="toggleView('produtos')" id="view-produtos" class="active-view">Produtos</button>
+        <button onclick="toggleView('vendas')" id="view-vendas">Vendas</button>
+        <button onclick="toggleView('clientes')" id="view-clientes">Clientes</button>
+        <button onclick="openModal()" id="new">Incluir</button>
+      </div>
+    </div>
+
+    <!-- Vizualização de Produtos -->
+    <div id="produtos-view" class="view-container">
+      <div class="divTable">
+        <table>
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Descrição</th>
+              <th>Preço</th>
+              <th class="acao">Editar</th>
+              <th class="acao">Excluir</th>
+            </tr>
+          </thead>
+          <tbody id="produtos-tbody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Vizualização de Vendas -->
+    <div id="vendas-view" class="view-container" style="display:none;">
+      <div class="divTable">
+        <table>
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Data da Venda</th>
+              <th>Quantidade</th>
+              <th>Desconto</th>
+              <th>Status</th>
+              <th class="acao">Editar</th>
+              <th class="acao">Excluir</th>
+            </tr>
+          </thead>
+          <tbody id="vendas-tbody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Vizualização de Clientes -->
+    <div id="clientes-view" class="view-container" style="display:none;">
+      <div class="divTable">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>CPF</th>
+              <th class="acao">Editar</th>
+              <th class="acao">Excluir</th>
+            </tr>
+          </thead>
+          <tbody id="clientes-tbody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Janela para Produtos -->
+    <div class="modal-container" id="modal-produtos">
+      <div class="modal">
+        <h2>Cadastro de Produto</h2>
+        <form id="form-produto">
+          <label for="m-produto">Produto</label>
+          <input id="m-produto" type="text" required />
+  
+          <label for="m-descriacao">Descrição</label>
+          <input id="m-descriacao" type="text" required />
+  
+          <label for="m-preco">Preço</label>
+          <input id="m-preco" type="number" step="0.01" min="0" required />
+          
+          <button id="btnSalvarProduto">Salvar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Janela para Vendas -->
+    <div class="modal-container" id="modal-vendas">
+      <div class="modal">
+        <h2>Cadastro de Venda</h2>
+        <form id="form-venda">
+          <label for="v-produto">Produto</label>
+          <select id="v-produto" required>
+            <option value="">Selecione um produto</option>
+          </select>
+  
+          <label for="v-data">Data da Venda</label>
+          <input id="v-data" type="date" required />
+  
+          <label for="v-quantidade">Quantidade</label>
+          <input id="v-quantidade" type="number" min="1" required />
+          
+          <label for="v-desconto">Desconto (%)</label>
+          <input id="v-desconto" type="number" min="0" max="100" step="0.1" value="0" required />
+          
+          <label for="v-status">Status da Venda</label>
+          <select id="v-status" required>
+            <option value="Pendente">Pendente</option>
+            <option value="Concluído">Concluído</option>
+            <option value="Cancelado">Cancelado</option>
+          </select>
+          
+          <button id="btnSalvarVenda">Salvar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Janela para Clientes -->
+    <div class="modal-container" id="modal-clientes">
+      <div class="modal">
+        <h2>Cadastro de Cliente</h2>
+        <form id="form-cliente">
+          <label for="c-nome">Nome</label>
+          <input id="c-nome" type="text" required />
+  
+          <label for="c-email">Email</label>
+          <input id="c-email" type="email" required />
+  
+          <label for="c-cpf">CPF</label>
+          <input id="c-cpf" type="text" maxlength="14" required />
+          
+          <button id="btnSalvarCliente">Salvar</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
