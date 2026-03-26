@@ -10,3 +10,5 @@ pytest
 pytest-cov
 httpx
 email-validator
+pytest
+httpx
