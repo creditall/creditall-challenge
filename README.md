@@ -1,27 +1,160 @@
-# Creditall Challenge
+# Desafio Creditall
 
-## Requisitos
-* O sistema deve ser desenvolvido utilizando a linguagem de sua preferência.
-* Criar um CRUD para as seguintes entidades:
-  * **Produto**: Nome, Descrição e Preço.
-  * **Venda**: Produto, Data da venda, Quantidade do produto, Desconto, Status da venda.
-  * **Cliente**: Nome, Email, CPF.
-* Utilizar um banco de dados relacional (preferencialmente MySQL) para armazenar as informações.
+API desenvolvida em FastAPI para gerenciamento de produtos, clientes e vendas, com persistência em banco de dados relacional.
 
-## Opcionais
-* Implementação de testes automatizados com cobertura de testes.
-* Upload de imagem no cadastro de produtos.
-* Desenvolvimento do front-end para o cadastro de produtos, caso o candidato deseje complementar a solução.
+## Tecnologias utilizadas
 
-## Critérios de Avaliação
-* Estrutura e organização do código e dos arquivos.
-* Qualidade do código e boas práticas.
-* Cobertura dos requisitos e opcionais.
+* FastAPI
+* SQLAlchemy
+* SQLite (dev)
+* Pydantic
+* Uvicorn
+* Python 3
 
-## Instruções para Desenvolvimento
-1. Realizar um **fork** deste repositório em sua conta do GitHub.
-2. Criar uma **branch** com o nome do desafio.
-3. Desenvolver a solução conforme os requisitos.
-4. Enviar o código para o repositório forkado e compartilhar o link.
+---
 
-Qualquer dúvida, fique à vontade para entrar em contato conosco.
+## Estrutura do projeto
+
+```
+app/
+├── api/routes        # rotas da aplicação (products, clients, sales)
+├── core              # configuração e banco de dados
+├── models            # models do banco (SQLAlchemy)
+├── schemas           # validação de dados (Pydantic)
+├── static/uploads    # armazenamento de imagens
+├── main.py           # inicialização da aplicação
+```
+
+---
+
+## Funcionalidades
+
+### Produtos
+
+* Criar produto
+* Listar produtos
+* Atualizar produto
+* Deletar produto
+* Upload de imagem para produto
+
+### Clientes
+
+* Criar cliente
+* Listar clientes
+* Atualizar cliente
+* Deletar cliente
+* Validação de email
+* Bloqueio de duplicidade (email e CPF)
+
+### Vendas
+
+* Criar venda
+* Listar vendas
+* Atualizar venda
+* Deletar venda
+* Validação de relacionamento (produto e cliente)
+
+---
+
+## Regras de negócio implementadas
+
+* Produto deve existir para criar venda
+* Cliente (se informado) deve existir
+* Email validado com EmailStr
+* CPF e Email únicos
+* Upload de imagem apenas para arquivos válidos
+
+---
+
+## Como executar o projeto
+
+### 1. Clonar o repositório
+
+```bash
+git clone https://github.com/Matheus-sys/desafio-crud-fastapi.git
+cd desafio-crud-fastapi
+```
+
+---
+
+### 2. Criar ambiente virtual
+
+```bash
+python -m venv venv
+```
+
+Ativar:
+
+Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+Linux/Mac:
+
+```bash
+source venv/bin/activate
+```
+
+---
+
+### 3. Instalar dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 4. Rodar a aplicação
+
+```bash
+python -m uvicorn app.main:app --reload
+```
+
+---
+
+### 5. Acessar documentação
+
+Swagger:
+
+```
+http://127.0.0.1:8000/docs
+```
+
+---
+
+## Upload de imagem
+
+Endpoint:
+
+```
+POST /products/{product_id}/upload-image
+```
+
+A imagem será salva em:
+
+```
+/static/uploads/
+```
+
+E poderá ser acessada via navegador:
+
+```
+http://127.0.0.1:8000/static/uploads/{nome_do_arquivo}
+```
+
+---
+
+## Observações
+
+* O banco utilizado é SQLite para ambiente de desenvolvimento
+* As imagens enviadas não são versionadas no repositório (.gitignore)
+
+---
+
+## Autor
+
+Matheus Pereira
+>>>>>>> desafio-crud
